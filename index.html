@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clicker game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="content">
+<button id="point">score</button>
+      <p id="score">0</p>
+      <button id='click'>click me</button>
+
+  </div>
+
+    <div>
+     <a href="http://localhost:63342/%20game%20project%203.7/catalog.html">shop</a>
+</div>
+</div>
+<script>
+  const click = document.getElementById('click');
+  const points = document.getElementById('points');
+  const score = document.getElementById('score');
+  const content = document.getElementById('.content');
+  const image = document.getElementById('img');
+  const ans= document.querySelector('p');
+  const twoTimes= document.getElementById('2x');
+  let currentScore = 0;
+
+  click.addEventListener('click', function (e){
+      currentScore=currentScore + 1;
+      score.innerText = currentScore;
+  });
+
+  twoTimes.addEventListener('click', function (e){
+      content.classList.add('click');
+  });
+
+</script>
+</body>
+</html>
