@@ -12,6 +12,7 @@
       <p id="score">0</p>
       <button id='click'>click me</button>
 
+
   </div>
 
     <div>
@@ -25,17 +26,23 @@
   const content = document.getElementById('.content');
   const image = document.getElementById('img');
   const ans= document.querySelector('p');
-  const twoTimes= document.getElementById('2x');
   let currentScore = 0;
 
   click.addEventListener('click', function (e){
-      currentScore=currentScore + 1;
+      currentScore=currentScore + 2;
       score.innerText = currentScore;
   });
 
+  if((score)  || (score)){
+      ans.textContent = 'brokie';
+  }   else{
+      score.value =  (points = 200)
+  }
+
 
   twoTimes.addEventListener('click', function (e){
-      content.classList.add('click');
+      currentScore=currentScore * 2;
+      score.innerText = currentScore
   });
 
 </script>
