@@ -14,10 +14,6 @@
 
 
   </div>
-
-    <div>
-     <a href="http://localhost:63342/%20game%20project%203.7/catalog.html">shop</a>
-</div>
 </div>
 <script>
   const click = document.getElementById('click');
@@ -27,24 +23,27 @@
   const image = document.getElementById('img');
   const ans= document.querySelector('p');
   let currentScore = 0;
+  let clickValue = 1;
 
   click.addEventListener('click', function (e){
-      currentScore=currentScore + 2;
+      currentScore+=clickValue;
       score.innerText = currentScore;
   });
 
-  if((score)  || (score)){
-      ans.textContent = 'brokie';
-  }   else{
-      score.value =   (points = 200)
-  }
-
-
   twoTimes.addEventListener('click', function (e){
-      currentScore=currentScore * 2;
-      score.innerText = currentScore
+      currentScore = clickValue + 4;
+      currentScore = twoTimes
   });
 
+
+
+
+
+
+
 </script>
+<h2> Buy Here<h2>
+    <button id="twoTimes"> 2x points</button>
+    <button id="points">100 points</button>
 </body>
 </html>
