@@ -7,8 +7,9 @@
 </head>
 <body>
 <div class="container">
+
   <div class="content">
-      <h2>hey, you should start clicking the button bc why not</h2>
+      <h2>hey, you should start clicking the click me button bc why not</h2>
 <button id="point">score</button>
       <p id="score">0</p>
       <button id='click'>click me</button>
@@ -21,10 +22,11 @@
 <script>
   const click = document.getElementById('click');
   const points = document.getElementById('points');
-  const score = document.getElementById('score');
+  let score = document.getElementById('score');
   const content = document.getElementById('.content');
   const image = document.getElementById('img');
   const ans= document.querySelector('p');
+  const box= document.getElementById('box')
   let currentScore = 0;
   let clickValue = 1;
   let addPoint = 1000;
@@ -44,17 +46,13 @@ points.addEventListener('click', function (e){
     score.innerText = currentScore;
 
 });
-image.addEventListener(function (e){
+image.addEventListener('click', function (e){
 currentScore=50
-
 });
-  if(score.points >1){
 
-      img='https://img.uline.com/is/image/uline/S-4061?$Mobile_Zoom$'
-  } else{
-      full.classList.add("hidden")
-  }
-  full.textContent = `Hello ${fullName}!`;
+ box.addEventListener('click', function(e){
+      image.src='https://i5.walmartimages.com/asr/b26b736a-660b-4eaf-96be-6c7bf1426ee4_1.91c65f8feb90bd3eb3b282962d7dacdd.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff'
+     });
 
 
 
