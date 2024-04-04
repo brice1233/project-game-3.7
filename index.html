@@ -9,6 +9,7 @@
 <div class="container">
     <img id="img" src=" https://image.spreadshirtmedia.com/image-server/v1/products/T1459A839PA3861PT28D1020060529W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/hi-sticker.jpg">
   <div class="content">
+      <H4>score to beat is 1,000,000</H4>
       <h2>hey, you should start clicking the click me button bc why not</h2>
 <button id="point">score</button>
       <p id="score">1</p>
@@ -22,7 +23,7 @@
 
 <h2> Buy Here</h2>
 <button id="twoTimes" class="hidden"> 2x points</button>
-<button id="points">1000 points</button>
+<button id="points" class="hidden ">1000 points</button>
 
 <script>
 
@@ -38,7 +39,8 @@
   let currentScore = 0;
   let clickValue = 1;
   let addPoint = 1000;
-  let subtract = -50;
+  let upgradeCost = 14;
+  let upgradeCost2 = 10;
 
 
   click.addEventListener('click', function (e){
@@ -49,40 +51,40 @@
   });
 
   function checkButtons(){
-      if(currentScore>=100){
+      if(currentScore>=upgradeCost2){
           avatar1.classList.remove("hidden")
       }else{
           avatar1.classList.add("hidden")
       }
 
-      if(currentScore>=230){
+      if(currentScore>=upgradeCost2){
           avatar2.classList.remove("hidden")
       }else{
           avatar2.classList.add("hidden")
       }
 
-      if(currentScore>=362){
+      if(currentScore>=upgradeCost2){
           avatar3.classList.remove("hidden")
       }else{
           avatar3.classList.add("hidden")
       }
-      if(currentScore>=50){
+      if(currentScore>=upgradeCost){
           twoTimes.classList.remove("hidden")
       }else{
           twoTimes.classList.add("hidden")
       }
-      if(currentScore>=50){
-          twoTimes.classList.remove("hidden")
-      }else{
-          twoTimes.classList.add("hidden")
-      }
+  }
+  if(currentScore>-upgradeCost){
+      twoTimes.classList.add("hidden")
+  }else{
 
   }
 
 
+
   twoTimes.addEventListener('click', function (e){
       clickValue*=2;
-      subtract = currentScore;
+      currentScore-=upgradeCost;
       score.innerText = currentScore;
   });
 
