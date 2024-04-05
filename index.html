@@ -9,12 +9,11 @@
 <div class="container">
     <img id="img" src=" https://image.spreadshirtmedia.com/image-server/v1/products/T1459A839PA3861PT28D1020060529W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/hi-sticker.jpg">
   <div class="content">
-      <H4>score to beat is 1,000,000</H4>
+      <H4>score to beat is 1.360041547070856e+24</H4>
       <h2>hey, you should start clicking the click me button bc why not</h2>
 <button id="point">score</button>
       <p id="score">1</p>
       <button id='click'>click me</button>
-
   </div>
 </div>
 <button id="1" class="hidden"> avatar1</button>
@@ -23,7 +22,7 @@
 
 <h2> Buy Here</h2>
 <button id="twoTimes" class="hidden"> 2x points</button>
-<button id="points" class="hidden ">1000 points</button>
+<button id="points" class="hidden">1000 points</button>
 
 <script>
 
@@ -39,8 +38,11 @@
   let currentScore = 0;
   let clickValue = 1;
   let addPoint = 1000;
-  let upgradeCost = 14;
-  let upgradeCost2 = 10;
+  let upgradeCost = 10;
+  let upgradeCost2 = 1200;
+  let upgradeCost3 = 1500
+  let upgradeCost4 = 2000
+  let upgradeCost5 = 1000
 
 
   click.addEventListener('click', function (e){
@@ -57,13 +59,13 @@
           avatar1.classList.add("hidden")
       }
 
-      if(currentScore>=upgradeCost2){
+      if(currentScore>=upgradeCost3){
           avatar2.classList.remove("hidden")
       }else{
           avatar2.classList.add("hidden")
       }
 
-      if(currentScore>=upgradeCost2){
+      if(currentScore>=upgradeCost4){
           avatar3.classList.remove("hidden")
       }else{
           avatar3.classList.add("hidden")
@@ -73,19 +75,18 @@
       }else{
           twoTimes.classList.add("hidden")
       }
+      if(currentScore>=upgradeCost5){
+          points.classList.remove("hidden")
+      }else{
+         points.classList.add("hidden")
+      }
   }
-  if(currentScore>-upgradeCost){
-      twoTimes.classList.add("hidden")
-  }else{
-
-  }
-
-
 
   twoTimes.addEventListener('click', function (e){
       clickValue*=2;
       currentScore-=upgradeCost;
       score.innerText = currentScore;
+
   });
 
 points.addEventListener('click', function (e){
@@ -98,6 +99,12 @@ avatar1.addEventListener('click', function (e){
     image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMtV6wpebtw9vrHzmMaJny6gmsxsoxsRfqVs8C9PPQukXpUfj95ET7F4BFkcfRl9nfwU&usqp=CAU"
 });
 
+avatar2.addEventListener('click', function(e){
+    image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hTwJDK6EiYlGsryIPhnk9ssEFDiTeGJdqo7WAyAQsWXaQW64ze2QbEMB210Onhk2cac&usqp=CAU"
+});
+avatar3.addEventListener('click',function (e){
+  image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpe2IqYt5wQ_iGX5lyIz57LsRfuyTMx7rqiVIXLVM7ug&s"
+});
 
 
 
