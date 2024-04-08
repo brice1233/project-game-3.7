@@ -42,7 +42,8 @@
   let upgradeCost2 = 1200;
   let upgradeCost3 = 1500
   let upgradeCost4 = 2000
-  let upgradeCost5 = 1000
+  let upgradeCost5 = 100
+
 
 
   click.addEventListener('click', function (e){
@@ -91,6 +92,7 @@
 
 points.addEventListener('click', function (e){
     currentScore+=addPoint
+    currentScore-=upgradeCost5
     score.innerText = currentScore;
     checkButtons()
 
