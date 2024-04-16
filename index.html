@@ -14,18 +14,20 @@
         <H4>score to beat is 10,000</H4>
         <h2>hey, you should start clicking the click me button bc why not</h2>
         <button id="point">score</button>
-        <p id="score">1</p>
+        <p id="score">0</p>
         <button id='click'>click me</button>
     </div>
 </div>
 <button id="test" class="hidden">avatar1</button>
 <button id="2" class="hidden"> avatar2</button>
 <button id="3" class="hidden">avatar3</button>
+<button id="clear" class="hidden">clear</button>
 
 <h2> Buy Here</h2>
 <button id="twoTimes" class="hidden"> 2x score = 150 points</button>
-<button id="points" class="hidden">1000 points = 150 points</button>
-<button id="three times" class="hidden">3x points</button>
+<button id="points" class="hidden">1000 points = 230 points</button>
+<button id="3x" class="hidden">3x score = 400 points</button>
+<button id="4x" class="hidden">4x score = 550 points</button>
 
 <script>
 
@@ -37,17 +39,22 @@
     const avatar2 = document.getElementById('2');
     const avatar3 = document.getElementById('3');
     const threeTimes = document.getElementById('3x');
+    const fourTimes = document.getElementById('4x');
+
     let currentScore = 0;
     let clickValue = 1;
     let addPoint = 1000;
-    let upgradeCost = 10;
+    let upgradeCost = 11;
     let upgradeCost2 = 12;
-    let upgradeCost3 = 15
-    let upgradeCost4 = 20
-    let upgradeCost5 = 10
+    let upgradeCost3 = 13
+    let upgradeCost4 = 14
+    let upgradeCost5 = 15
+    let upgradeCost6 = 16
+    let upgradeCost7 = 17
     let upgrade1Enabled = true
     let upgrade2Enabled = true
     let upgrade3Enabled = true
+    let upgrade4Enabled = true
 
 
     click.addEventListener('click', function () {
@@ -57,32 +64,18 @@
         checkButtons()
 
     });
-    avatar1.addEventListener('click', function () {
-        image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMtV6wpebtw9vrHzmMaJny6gmsxsoxsRfqVs8C9PPQukXpUfj95ET7F4BFkcfRl9nfwU&usqp=CAU"
-    });
-    avatar2.addEventListener('click', function () {
-        image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hTwJDK6EiYlGsryIPhnk9ssEFDiTeGJdqo7WAyAQsWXaQW64ze2QbEMB210Onhk2cac&usqp=CAU"
-    });
-    avatar3.addEventListener('click', function () {
-        image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQegrAMIrYTJQXyzYFSzGK9HGoBck3tchmEQw&s"
-    });
+
+    function reset(){
+        avatar1.classList.add("hidden")
+        avatar2.classList.add("hidden")
+        avatar3.classList.add("hidden")
+        twoTimes.classList.add("hidden")
+        points.classList.add("hidden")
+        threeTimes.classList.add("hidden")
+        fourTimes.classList.add("hidden")
+    }
 
     function checkButtons() {
-        if (currentScore >= upgradeCost2) {
-            avatar1.classList.remove("hidden")
-        } else {
-            avatar1.classList.add("hidden")
-        }
-        if (currentScore >= upgradeCost3) {
-            avatar2.classList.remove("hidden")
-        } else {
-            avatar2.classList.add("hidden")
-        }
-        if (currentScore >= upgradeCost4) {
-            avatar3.classList.remove("hidden")
-        } else {
-            avatar3.classList.add("hidden")
-        }
         if (currentScore >= upgradeCost && upgrade1Enabled) {
             twoTimes.classList.remove("hidden")
         } else {
@@ -93,13 +86,32 @@
         } else {
             points.classList.add("hidden")
         }
-        if (currentScore >= upgradeCost5 && upgrade3Enabled) {
+        if (currentScore >= upgradeCost6 && upgrade3Enabled) {
             threeTimes.classList.remove('hidden')
         } else {
             threeTimes.classList.add("hidden")
         }
+        if (currentScore >= upgradeCost7 && upgrade4Enabled) {
+            fourTimes.classList.remove('hidden')
+        } else {
+            fourTimes.classList.add("hidden")
+        }
+        if(currentScore >= 150){
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMtV6wpebtw9vrHzmMaJny6gmsxsoxsRfqVs8C9PPQukXpUfj95ET7F4BFkcfRl9nfwU&usqp=CAU"
+        }else{
+            avatar1.classList.add("hidden")
     }
-
+        if(currentScore >= 1200){
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hTwJDK6EiYlGsryIPhnk9ssEFDiTeGJdqo7WAyAQsWXaQW64ze2QbEMB210Onhk2cac&usqp=CAU"
+        }else {
+            avatar2.classList.add("hidden")
+        }
+        if(currentScore >= 2000){
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQegrAMIrYTJQXyzYFSzGK9HGoBck3tchmEQw&s"
+        }else{
+            avatar3.classList.add("hidden")
+        }
+    }
     twoTimes.addEventListener('click', function () {
         clickValue *= 2;
         currentScore -= upgradeCost;
@@ -117,19 +129,22 @@
     });
     threeTimes.addEventListener('click', function () {
         clickValue *= 3;
-        currentScore -= upgradeCost;
+        currentScore -= upgradeCost6;
         score.innerText = currentScore;
+        upgrade3Enabled = false
+        checkButtons()
+    });
+    fourTimes.addEventListener('click', function () {
+        clickValue *= 4;
+        currentScore -= upgradeCost7;
+        score.innerText = currentScore;
+        upgrade4Enabled = false
         checkButtons()
     });
     function winner(){
-        if(currentScore >= 10000)
+        if(currentScore >= 100000000000)
             score.innerText="you won"
     }
-
-
-
-
-
 
 </script>
 </body>
