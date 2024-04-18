@@ -12,22 +12,25 @@
          alt="">
     <div class="content">
         <H4>score to beat is 10,000</H4>
-        <h2>hey, you should start clicking the click me button bc why not</h2>
+        <h2>points to get upgrade= 100,400,3000,4200, 5000</h2>
         <button id="point">score</button>
         <p id="score">0</p>
-        <button id='click'>click me</button>
+        <button id='click'>clickidy</button>
     </div>
 </div>
 <button id="test" class="hidden">avatar1</button>
 <button id="2" class="hidden"> avatar2</button>
 <button id="3" class="hidden">avatar3</button>
+<button id="4" class="hidden">avatar4</button>
+<button id="5" class="hidden">avatar5</button>
 <button id="clear" class="hidden">clear</button>
 
 <h2> Buy Here</h2>
-<button id="twoTimes" class="hidden"> 2x score = 150 points</button>
-<button id="points" class="hidden">1000 points = 230 points</button>
-<button id="3x" class="hidden">3x score = 400 points</button>
-<button id="4x" class="hidden">4x score = 550 points</button>
+<button id="twoTimes" class="hidden"> 2x score = 100 points</button>
+<button id="points" class="hidden">1000 points = 400 points</button>
+<button id="3x" class="hidden">3x score = 3000 points</button>
+<button id="4x" class="hidden">4x score = 4200 points</button>
+<button id="5x" class="hidden">5x score = 5000 points</button>
 
 <script>
 
@@ -38,23 +41,26 @@
     const avatar1 = document.getElementById('test');
     const avatar2 = document.getElementById('2');
     const avatar3 = document.getElementById('3');
+    const avatar4 = document.getElementById('4');
+    const  avatar5 = document.getElementById('5');
+    const  avatar6 = document.getElementById('6');
     const threeTimes = document.getElementById('3x');
     const fourTimes = document.getElementById('4x');
+    const fiveTimes = document.getElementById('5x');
 
     let currentScore = 0;
     let clickValue = 1;
     let addPoint = 1000;
-    let upgradeCost = 11;
-    let upgradeCost2 = 12;
-    let upgradeCost3 = 13
-    let upgradeCost4 = 14
-    let upgradeCost5 = 15
-    let upgradeCost6 = 16
-    let upgradeCost7 = 17
+    let upgradeCost = 100;
+    let upgradeCost5 = 400
+    let upgradeCost6 = 3000
+    let upgradeCost7 = 4200
+    let upgradeCost8 = 5000
     let upgrade1Enabled = true
     let upgrade2Enabled = true
     let upgrade3Enabled = true
     let upgrade4Enabled = true
+    let upgrade5Enabled = true
 
 
     click.addEventListener('click', function () {
@@ -96,12 +102,17 @@
         } else {
             fourTimes.classList.add("hidden")
         }
-        if(currentScore >= 150){
+        if (currentScore >= upgradeCost8 && upgrade5Enabled) {
+           fiveTimes.classList.remove('hidden')
+        } else {
+            fiveTimes.classList.add("hidden")
+        }
+        if(currentScore >= 1200){
             image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMtV6wpebtw9vrHzmMaJny6gmsxsoxsRfqVs8C9PPQukXpUfj95ET7F4BFkcfRl9nfwU&usqp=CAU"
         }else{
             avatar1.classList.add("hidden")
     }
-        if(currentScore >= 1200){
+        if(currentScore >= 1500){
             image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hTwJDK6EiYlGsryIPhnk9ssEFDiTeGJdqo7WAyAQsWXaQW64ze2QbEMB210Onhk2cac&usqp=CAU"
         }else {
             avatar2.classList.add("hidden")
@@ -111,6 +122,20 @@
         }else{
             avatar3.classList.add("hidden")
         }
+        if(currentScore >= 2400){
+            image.src ="https://preview.redd.it/if-zoro-got-lost-and-ended-up-in-the-back-rooms-do-you-v0-404t0gtyebcb1.png?width=640&crop=smart&auto=webp&s=a102db19e4adb7807318f61c492c91d693142d68"
+        }else{
+            avatar4.classList.add('hidden')
+        }
+        if(currentScore >=2404){
+            image.src="https://preview.redd.it/who-is-the-best-evil-spongebob-variant-v0-63wjr8fjohjb1.jpg?width=640&crop=smart&auto=webp&s=7db069eacd698be5bc4c7fe5ce5d524d73a2b5b2"
+        }
+         avatar5.classList.add('hidden')
+    }
+    if(currentScore >= 2800){
+        image.src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_38k2css2f3ALfa6BzFmLWNOJxYWY8KU96w&usqp=CAU"
+    }else{
+        avatar6.classList.add('hidden')
     }
     twoTimes.addEventListener('click', function () {
         clickValue *= 2;
@@ -141,8 +166,15 @@
         upgrade4Enabled = false
         checkButtons()
     });
+    fiveTimes.addEventListener('click', function () {
+        clickValue *= 5;
+        currentScore -= upgradeCost8;
+        score.innerText = currentScore;
+        upgrade5Enabled = false
+        checkButtons()
+    });
     function winner(){
-        if(currentScore >= 100000000000)
+        if(currentScore >= 1000000)
             score.innerText="you won"
     }
 
