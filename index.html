@@ -44,6 +44,7 @@
     const avatar4 = document.getElementById('4');
     const  avatar5 = document.getElementById('5');
     const  avatar6 = document.getElementById('6');
+    const twoTimes= document.getElementById('twoTimes');
     const threeTimes = document.getElementById('3x');
     const fourTimes = document.getElementById('4x');
     const fiveTimes = document.getElementById('5x');
@@ -103,40 +104,43 @@
             fourTimes.classList.add("hidden")
         }
         if (currentScore >= upgradeCost8 && upgrade5Enabled) {
-           fiveTimes.classList.remove('hidden')
+            fiveTimes.classList.remove('hidden')
         } else {
             fiveTimes.classList.add("hidden")
         }
-        if(currentScore >= 1200){
+        if (currentScore >= 1200) {
             image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMtV6wpebtw9vrHzmMaJny6gmsxsoxsRfqVs8C9PPQukXpUfj95ET7F4BFkcfRl9nfwU&usqp=CAU"
-        }else{
+        } else {
             avatar1.classList.add("hidden")
-    }
-        if(currentScore >= 1500){
+        }
+        if (currentScore >= 1800) {
             image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hTwJDK6EiYlGsryIPhnk9ssEFDiTeGJdqo7WAyAQsWXaQW64ze2QbEMB210Onhk2cac&usqp=CAU"
-        }else {
+        } else {
             avatar2.classList.add("hidden")
         }
-        if(currentScore >= 2000){
+        if (currentScore >= 2000) {
             image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQegrAMIrYTJQXyzYFSzGK9HGoBck3tchmEQw&s"
-        }else{
+        } else {
             avatar3.classList.add("hidden")
         }
-        if(currentScore >= 2400){
-            image.src ="https://preview.redd.it/if-zoro-got-lost-and-ended-up-in-the-back-rooms-do-you-v0-404t0gtyebcb1.png?width=640&crop=smart&auto=webp&s=a102db19e4adb7807318f61c492c91d693142d68"
-        }else{
+        if (currentScore >= 2400) {
+            image.src = "https://preview.redd.it/if-zoro-got-lost-and-ended-up-in-the-back-rooms-do-you-v0-404t0gtyebcb1.png?width=640&crop=smart&auto=webp&s=a102db19e4adb7807318f61c492c91d693142d68"
+        } else {
             avatar4.classList.add('hidden')
         }
-        if(currentScore >=2404){
-            image.src="https://preview.redd.it/who-is-the-best-evil-spongebob-variant-v0-63wjr8fjohjb1.jpg?width=640&crop=smart&auto=webp&s=7db069eacd698be5bc4c7fe5ce5d524d73a2b5b2"
+        if (currentScore >= 2401) {
+            image.src = "https://preview.redd.it/who-is-the-best-evil-spongebob-variant-v0-63wjr8fjohjb1.jpg?width=640&crop=smart&auto=webp&s=7db069eacd698be5bc4c7fe5ce5d524d73a2b5b2"
+        } else {
+            avatar5.classList.add('hidden')
         }
-         avatar5.classList.add('hidden')
+        if (currentScore >= 2800) {
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_38k2css2f3ALfa6BzFmLWNOJxYWY8KU96w&usqp=CAU"
+        } else {
+            avatar6.classList.add('hidden')
+        }
     }
-    if(currentScore >= 2800){
-        image.src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_38k2css2f3ALfa6BzFmLWNOJxYWY8KU96w&usqp=CAU"
-    }else{
-        avatar6.classList.add('hidden')
-    }
+
+
     twoTimes.addEventListener('click', function () {
         clickValue *= 2;
         currentScore -= upgradeCost;
@@ -174,7 +178,7 @@
         checkButtons()
     });
     function winner(){
-        if(currentScore >= 1000000)
+        if(currentScore >= 100000)
             score.innerText="you won"
     }
 
